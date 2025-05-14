@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contato - Fernando de Noronha</title>
+  <style>
+    :root {
+      --burnt-orange: #C65A1F;
+      --sunset: #D28A3A;
+      --sand: #E2C099;
+      --brown-dark: #5B2C1B;
+      --light-bg: #FAF1E6;
+      --beige: #E2C099;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--brown-dark);
+    }
+
+    header {
+      background-color: var(--brown-dark);
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header img {
+      width: 100px;
+    }
+
+    header nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header nav a:hover {
+      color: var(--sunset);
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    h1 {
+      color: var(--burnt-orange);
+      text-align: center;
+    }
+
+    .container {
+      background-color: var(--sand);
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 900px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      font-size: 1em;
+      margin-bottom: 15px;
+      border: 1px solid var(--brown-dark);
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    button {
+      background: var(--burnt-orange);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1.1em;
+    }
+
+    button:hover {
+      background: var(--sunset);
+    }
+
+    footer {
+      background-color: var(--brown-dark);
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    footer .social img {
+      width: 30px;
+      margin-left: 10px;
+      transition: transform 0.3s;
+    }
+
+    footer .social img:hover {
+      transform: scale(1.2);
+    }
+
+    .social a {
+      text-decoration: none;
+    }
+
+    .success-message {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      margin-top: 20px;
+      text-align: center;
+      border-radius: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.jpeg" alt="Logo Fernando de Noronha">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="noronha.html">Roteiro Noronha</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Fale Conosco</h1>
+
+    <div class="container">
+      <form id="contactForm">
+        <label>Nome:<br><input type="text" name="nome" required></label><br><br>
+        <label>Email:<br><input type="email" name="email" required></label><br><br>
+        <label>Mensagem:<br><textarea name="mensagem" rows="5" required></textarea></label><br><br>
+        <button type="submit">Enviar</button>
+      </form>
+
+      <div id="successMessage" class="success-message">
+        Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+        <p>© 2025 Fernando de Noronha Viagens</p>
+        <p>Contato: (00) 0000-0000 | fernandonoronha@viagens.com</p>
+    </div>
+    <div class="social">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Facebook"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="WhatsApp"></a>
+    </div>
+</footer>
+
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+
+      
+      successMessage.style.display = 'block';
+
+      
+      form.reset();
+
+      
+      setTimeout(function() {
+        successMessage.style.display = 'none';
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

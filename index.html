@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Fernando de Noronha</title>
+    <style>
+        :root {
+            --burnt-orange: #C65A1F;
+            --sunset: #D28A3A;
+            --sand: #E2C099;
+            --brown-dark: #5B2C1B;
+            --light-bg: #FAF1E6;
+            --beige: #E2C099;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--brown-dark);
+        }
+
+        .wrapper {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: var(--beige);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .sidebar img {
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar nav a {
+            color: var(--brown-dark);
+            margin: 10px 0;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            display: block;
+        }
+
+        .sidebar nav a:hover {
+            color: var(--sunset);
+        }
+
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .container {
+            background-color: var(--sand);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: var(--brown-dark);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        footer .social img {
+            width: 30px;
+            margin-left: 10px;
+            transition: transform 0.3s;
+        }
+
+        footer .social img:hover {
+            transform: scale(1.2);
+        }
+        header {
+            background-color: var(--brown-dark);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        header a:hover {
+            color: var(--sunset);
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">Início</a>
+        <a href="roteiro.html">Roteiro</a>
+        <a href="contato.html">Contato</a>
+    </header>
+    
+    <div class="wrapper">
+        <div class="sidebar">
+            <img src="logo.jpeg" alt="Logo Fernando de Noronha">
+            <nav>
+                <a href="javascript:void(0)" onclick="showSection('inicio')">Início</a>
+                <a href="javascript:void(0)" onclick="showSection('historia')">História</a>
+                <a href="javascript:void(0)" onclick="showSection('descoberta')">Descoberta</a>
+                <a href="javascript:void(0)" onclick="showSection('colonizacao')">Colonização e Era Moderna</a>
+                <a href="javascript:void(0)" onclick="showSection('periodo-contemporaneo')">Período Contemporâneo</a>
+                <a href="javascript:void(0)" onclick="showSection('geografia')">Geografia</a>
+                <a href="javascript:void(0)" onclick="showSection('clima')">Clima</a>
+                <a href="javascript:void(0)" onclick="showSection('praias')">Praias</a>
+                <a href="javascript:void(0)" onclick="showSection('problemas-ecologicos')">Problemas Ecológicos</a>
+                <a href="javascript:void(0)" onclick="showSection('economia')">Economia</a>
+                <a href="javascript:void(0)" onclick="showSection('turismo')">Turismo</a>
+                <a href="javascript:void(0)" onclick="showSection('transporte')">Transporte</a>
+                <a href="javascript:void(0)" onclick="showSection('cultura')">Cultura</a>
+            </nav>
+        </div>
+
+        <div class="main-content">
+            <div class="content">
+                <main>
+                    <h1>Bem-vindo à Fernando de Noronha Viagens</h1>
+                    <p>Especialistas em experiências inesquecíveis. Conheça o paraíso de Fernando de Noronha com nosso roteiro exclusivo.</p>
+
+                    <div id="inicio" class="section active">
+                        <div class="container">
+                            <h2>Início</h2>
+                            <p>Fernando de Noronha é um arquipélago brasileiro localizado no Oceano Atlântico, conhecido por suas paisagens deslumbrantes, praias paradisíacas e rica biodiversidade. Considerado um dos destinos mais desejados do Brasil, o arquipélago oferece experiências únicas para os amantes da natureza e da aventura.
+                         </div>
+                    </div>
+
+                    <div id="historia" class="section">
+                        <div class="container">
+                            <h2>História</h2>
+                            <p>A história de Fernando de Noronha é marcada por disputas entre colonizadores europeus. Descoberta no início do século XVI, a ilha foi ocupada por portugueses, holandeses e franceses ao longo dos séculos. Sua posição estratégica no Atlântico a tornou um ponto militar importante e um local de interesse geopolítico.</p>
+                        </div>
+                    </div>
+
+                    <div id="descoberta" class="section">
+                        <div class="container">
+                            <h2>Descoberta</h2>
+                            <p>Acredita-se que Fernando de Noronha foi descoberta por volta de 1503 por uma expedição portuguesa liderada por Américo Vespúcio. O nome do arquipélago homenageia o financiador da expedição, o comerciante Fernão de Loronha, e sua descoberta foi um dos primeiros registros do território brasileiro.</p>
+                        </div>
+                    </div>
+
+                    <div id="colonizacao" class="section">
+                        <div class="container">
+                            <h2>Colonização e Era Moderna</h2>
+                            <p>Durante os séculos XVII e XVIII, Fernando de Noronha foi ocupada por diferentes potências europeias. Os portugueses construíram fortes e estruturas militares para proteger a ilha. Com o tempo, ela também foi utilizada como presídio e posto militar. A influência arquitetônica desse período ainda pode ser observada nas ruínas históricas da ilha.</p>
+                        </div>
+                    </div>
+
+                    <div id="periodo-contemporaneo" class="section">
+                        <div class="container">
+                            <h2>Período Contemporâneo</h2>
+                            <p>No século XX, Fernando de Noronha passou a ter maior importância como área de proteção ambiental. Em 1988, parte do arquipélago foi transformada em Parque Nacional Marinho, e atualmente a ilha é um modelo de turismo sustentável e conservação ambiental no Brasil.</p>
+                        </div>
+                    </div>
+
+                    <div id="geografia" class="section">
+                        <div class="container">
+                            <h2>Geografia</h2>
+                            <p>Fernando de Noronha é composto por 21 ilhas e ilhotas, sendo a principal a única habitada. O arquipélago se formou a partir de atividade vulcânica e possui formações rochosas únicas, além de falésias, piscinas naturais e uma das maiores concentrações de vida marinha do país.</p>
+                        </div>
+                    </div>
+
+                    <div id="clima" class="section">
+                        <div class="container">
+                            <h2>Clima</h2>
+                            <p>O clima em Fernando de Noronha é tropical, com temperaturas médias entre 25°C e 30°C durante todo o ano. Existem duas estações bem definidas: a seca (de agosto a fevereiro) e a chuvosa (de março a julho). A melhor época para visitar a ilha é durante a estação seca, quando o mar está mais calmo e as praias ainda mais convidativas</p>
+                        </div>
+                    </div>
+
+                    <div id="praias" class="section">
+                        <div class="container">
+                            <h2>Praias</h2>
+                            <p>As praias de Fernando de Noronha estão entre as mais belas do mundo. Destaque para a Praia do Sancho, frequentemente eleita como a melhor do planeta, além da Baía dos Porcos, Praia do Leão e Cacimba do Padre, ideais para mergulho, surfe e contemplação da natureza.</p>
+                        </div>
+                    </div>
+
+                    <div id="problemas-ecologicos" class="section">
+                        <div class="container">
+                            <h2>Problemas Ecológicos</h2>
+                            <p>Apesar da forte preservação, Fernando de Noronha enfrenta desafios ecológicos como o controle do turismo, descarte de resíduos e a introdução de espécies exóticas. O equilíbrio entre conservação e visitação é constantemente debatido para garantir a sustentabilidade do arquipélago.</p>
+                        </div>
+                    </div>
+
+                    <div id="economia" class="section">
+                        <div class="container">
+                            <h2>Economia</h2>
+                            <p>A economia de Fernando de Noronha gira em torno do turismo ecológico. A população local trabalha majoritariamente com hospedagem, alimentação, transporte e serviços voltados aos visitantes. O governo também desempenha papel importante com regulamentações para manter a sustentabilidade econômica e ambiental.</p>
+                        </div>
+                    </div>
+
+                    <div id="turismo" class="section">
+                        <div class="container">
+                            <h2>Turismo</h2>
+                            <p>O turismo em Fernando de Noronha é altamente controlado, com limite de visitantes por dia e taxa de preservação ambiental. As principais atividades incluem mergulho, trilhas, passeios de barco, observação de golfinhos e exploração das praias. O destino atrai turistas de todo o mundo em busca de contato direto com a natureza.</p>
+                        </div>
+                    </div>
+
+                    <div id="transporte" class="section">
+                        <div class="container">
+                            <h2>Transporte</h2>
+                            <p>O acesso à ilha é feito por via aérea a partir de Recife ou Natal. Dentro da ilha, o transporte é realizado por carros elétricos, bicicletas, motos e táxis. Também há opções de caminhadas e passeios de buggy. O controle veicular é parte das medidas sustentáveis implementadas.</p>
+                        </div>
+                    </div>
+
+                    <div id="cultura" class="section">
+                        <div class="container">
+                            <h2>Cultura</h2>
+                            <p>A cultura de Fernando de Noronha é influenciada pelas tradições nordestinas, com forte presença da música regional, festas populares e culinária baseada em frutos do mar. A comunidade local é acolhedora e preserva um modo de vida simples, valorizando a natureza e a história da ilha.</p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <footer>
+                <div>
+                    <p>© 2025 Fernando de Noronha Viagens</p>
+                    <p>Contato: (00) 0000-0000 | fernandonoronha@viagens.com</p>
+                </div>
+                <div class="social">
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Instagram"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="WhatsApp"></a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            const activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
